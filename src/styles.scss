@@ -4,6 +4,8 @@
 @import "primeng/resources/primeng.css";
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+
 html,
 body,
 p,
@@ -25,6 +27,10 @@ app-root {
 app-root {
   display: flex;
   flex-direction: column;
+}
+
+body {
+  background-color: #F5F7F8; 
 }
 
 .row {
@@ -69,9 +75,18 @@ app-root {
   gap: 2rem;
 }
 
+// .space-between {
+//  justify-content: space-between;
+// }
+
 .space-between {
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Maintain min width and responsiveness */
+  grid-gap: 30px;
 }
+
+
+
 
 .align-center {
   align-items: center;
@@ -94,3 +109,23 @@ app-root {
   pointer-events: none;
   opacity: 0.5;
 }
+
+/* Global scrollbar styles (for Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3C82F6;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F5F7F8;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #495E57;
+  transition: 0.3;
+}
+ 

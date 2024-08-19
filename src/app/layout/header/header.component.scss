@@ -1,13 +1,12 @@
 .wrapper {
     width: 100%;
-  
     border-bottom: 1px solid var(--border-color);
-  
-    padding: 2rem;
-  
+    padding: 2rem; 
     box-sizing: border-box;
   
     a {
+      position: relative;
+      border-left: 1rem;
       font-size: large;
       text-decoration: none;
       font-weight: 300;
@@ -20,17 +19,29 @@
 
     h1 {
       position: absolute;
-      left: 2rem;
+      left: 1.5rem;
       font-family: 'Courgette', cursive;
       font-size: 3.3rem;
-    }
-  
-    .logo {
-      height: 100%;
-      object-fit: contain;
-  
-      height: 2rem;
-  
-      margin-right: auto;
+
+    
+      @media (max-width: 360px) {
+        font-size: 2rem;
+      }
+    
+      @media (min-width: 361px) and (max-width: 768px) {
+        font-size: 2.1rem;
+      }
+    
+      @media (min-width: 769px) and (max-width: 1024px) {
+        font-size: 2rem;
+      }
+    
+      @media (min-width: 1025px) and (max-width: 1280px) {
+        font-size: 3.2rem;
+      }
+    
+      @media (min-width: 1281px) {
+        font-size: 3.3rem;
+      }
     }
   }

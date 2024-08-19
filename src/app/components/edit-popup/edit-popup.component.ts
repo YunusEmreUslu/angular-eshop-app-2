@@ -8,6 +8,7 @@ import {
   ReactiveFormsModule,
   ValidatorFn,
   Validators,
+  AbstractControl
 } from '@angular/forms';
 import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
@@ -53,10 +54,17 @@ export class EditPopupComponent {
     };
   }
 
+  numericValidator(): ValidatorFn {
+    return (control: AbstractControl) => {
+      const isNumeric = /^\d+$/.test(control.value); // Regular expression to check if the value is only digits
+      return isNumeric ? null : { nonNumeric: true };
+    };
+  }
+
   productForm = this.formBuilder.group({
     name: ['', [Validators.required, this.specialCharacterValidator()]],
     image: [''],
-    price: ['', [Validators.required]],
+    price: ['', [Validators.required, this.numericValidator()]],
     rating: [0],
   });
 

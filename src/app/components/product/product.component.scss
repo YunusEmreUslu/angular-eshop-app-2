@@ -1,5 +1,9 @@
 .wrapper {
-    width: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  flex-wrap: wrap; /* Allow wrapping of content */
+    
   
     img {
       aspect-ratio: 1;
